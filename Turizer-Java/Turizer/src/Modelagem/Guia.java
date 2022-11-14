@@ -18,6 +18,7 @@ public class Guia {
     private String sobrenome;
     private String email;
     private String senha;
+    private int id;
     
     Conexao conGuia = new Conexao();
 
@@ -63,6 +64,15 @@ public class Guia {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+    
     
     public void gravar()
     {
@@ -86,7 +96,7 @@ public class Guia {
     public void excluir()
     {
         String sql;
-        sql = "delete from Guia where Email=" + "'" + this.getEmail() + "'";
+        sql = "delete from Guia where Id=" + "'" + this.getId()+ "'";
         conGuia.executeSQL(sql);
         JOptionPane.showMessageDialog(null, "Registro excluído com sucesso!");
     }
@@ -95,7 +105,7 @@ public class Guia {
     {
         String sql;
         sql = "update Guia set nome='" + this.getNome() +"' , sobrenome='" + this.getSobrenome() + "' , " + "email='" 
-                + this.getEmail() + "' , " + "senha='" + this.getSenha() + "' where email='" + this.getEmail() + "'";
+                + this.getEmail() + "' , " + "senha='" + this.getSenha() + "' where Id='" + this.getId()+ "'";
         conGuia.executeSQL(sql);
         JOptionPane.showMessageDialog(null, "Registro alterado com sucesso!"); 
     }

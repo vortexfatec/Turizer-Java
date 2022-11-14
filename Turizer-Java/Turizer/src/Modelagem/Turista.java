@@ -18,7 +18,7 @@ public class Turista {
     private String sobrenome;
     private String email;
     private String senha;
-    
+    private int id;
     Conexao conTurista = new Conexao();
 
     public Turista() {
@@ -63,6 +63,15 @@ public class Turista {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+    
     
     public void gravar()
     {
@@ -86,7 +95,7 @@ public class Turista {
     public void excluir()
     {
         String sql;
-        sql = "Delete from Turista where Email=" + "'" + this.getEmail() + "'";
+        sql = "Delete from Turista where Id=" + "'" + this.getId()+ "'";
         conTurista.executeSQL(sql);
         JOptionPane.showMessageDialog(null, "Registro excluído com sucesso!");
     }
@@ -95,7 +104,7 @@ public class Turista {
     {
         String sql;
         sql = "update Turista set nome='" + this.getNome() +"' , sobrenome='" + this.getSobrenome() + "' , " + "email='" 
-                + this.getEmail() + "' , " + "senha='" + this.getSenha() + "' where email=" + "'" + this.getEmail() + "'";
+                + this.getEmail() + "' , " + "senha='" + this.getSenha() + "' where Id=" + "'" + this.getId()+ "'";
         conTurista.executeSQL(sql);
         JOptionPane.showMessageDialog(null, "Registro alterado com sucesso!");
     }
