@@ -23,7 +23,7 @@ public class Conexao {
     final private String url= "jdbc:mysql://127.0.0.1/Turizer";
     
     final private String usuario="root";
-    final private String senha="Tloubf4mateus";
+    final private String senha="";
     private Connection conexao;// objeto que faz conexao com o banco
     public Statement statement;// objeto que abre caminho até o banco
     public ResultSet resultset;// objeto que armazena os comandos sql   
